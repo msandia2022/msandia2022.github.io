@@ -14,3 +14,10 @@ In the `TURN` state, the robot rotates until it achieves a random angle.
 Finally, the robot resumes its cleaning in the `FORWARD` state.
 
 ![FSM Image](recursos/FSM.jpg)
+
+## Implementation
+To implement the algorithm, I defined two functions that process laser sensor data: one converts laser distance readings from degrees to radians, and the other calculates the actual angle. Additionally, a third function randomizes an angle.
+
+Adding randomization enhances the algorithm's robustness, as this unpredictability allows the robot to cover more area effectively.
+
+
