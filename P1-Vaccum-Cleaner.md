@@ -30,20 +30,20 @@ Adding randomization enhances the algorithm's robustness, as this unpredictabili
 
 <style>
   body {
-    background-color: #E3F2FD; /* Light Blue Background */
-    color: #1A237E; /* Dark Blue Text */
+    background-color: #121212; /* Fondo oscuro */
+    color: #E0E0E0; /* Texto claro */
   }
 
   h1, h2, h3 {
-    color: #0D47A1; /* Strong Blue for Headers */
+    color: #BB86FC; /* Púrpura para encabezados */
   }
 
   a {
-    color: #D32F2F; /* Red color for links */
+    color: #03DAC6; /* Verde azulado para enlaces */
   }
 
   video {
-    border: 2px solid #42A5F5; /* Light Blue Border around the video */
+    border: 2px solid #BB86FC; /* Borde púrpura alrededor del video */
   }
 </style>
 
