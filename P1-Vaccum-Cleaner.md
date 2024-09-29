@@ -1,3 +1,10 @@
+<style>
+  body {
+    background-color: #f0f0f0; /* Light grey background */
+    color: #333333; /* Dark text color */
+  }
+</style>
+
 # P1 - Vacuum Cleaner
 In this practice, I have implemented a simple algorithm for the navigation of the robot vacuum cleaner using the bumper and the laser sensors.
 
