@@ -21,3 +21,7 @@ To implement the algorithm, I defined two functions that process laser sensor da
 Adding randomization enhances the algorithm's robustness, as this unpredictability allows the robot to cover more area effectively.
 
 
+## Robot cleaning for 10 minutes
+![Video](recursos/video-P1.mp4)
+
+
