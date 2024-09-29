@@ -1,10 +1,3 @@
-<style>
-  body {
-    background-color: #f0f0f0; /* Light grey background */
-    color: #333333; /* Dark text color */
-  }
-</style>
-
 # P1 - Vacuum Cleaner
 In this practice, I have implemented a simple algorithm for the navigation of the robot vacuum cleaner using the bumper and the laser sensors.
 
@@ -35,4 +28,22 @@ Adding randomization enhances the algorithm's robustness, as this unpredictabili
 </video>
 
 
+<style>
+  body {
+    background-color: #E3F2FD; /* Light Blue Background */
+    color: #1A237E; /* Dark Blue Text */
+  }
+
+  h1, h2, h3 {
+    color: #0D47A1; /* Strong Blue for Headers */
+  }
+
+  a {
+    color: #D32F2F; /* Red color for links */
+  }
+
+  video {
+    border: 2px solid #42A5F5; /* Light Blue Border around the video */
+  }
+</style>
 
