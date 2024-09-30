@@ -4,6 +4,8 @@ Welcome to my blog! I'm Miriam Sandía, a Robotics Software Engineering student 
 ## Robótica Móvil
 [Project 1 - Vacuum Cleaner](P1-Vaccum-Cleaner.md)
 
+[Project 2 - Follow Line](P2-Follow-Line.md)
+
 <style>
   body {
     background-color: #121212; /* Fondo oscuro */
