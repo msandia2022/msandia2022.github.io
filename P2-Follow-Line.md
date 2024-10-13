@@ -1,25 +1,19 @@
 # P2 - Follow Line
-In this practice, I have implemented a simple algorithm for the navigation of the robot vacuum cleaner using the bumper and the laser sensors.
-
-##  PID
-To start developing the algorithm, I defined a list of states and the inputs that trigger the transitions between each state.
-
-Initially, the robot starts in the `FORWARD` state until the bumper detects a collision.
-
-Then, it transitions to the `BACKWARD` state to separate from the wall and avoid any scratches.
-When the bumper no longer detects a collision, the robot changes to the `TURN` state.
-
-In the `TURN` state, the robot rotates until it achieves a random angle.
-
-Finally, the robot resumes its cleaning in the `FORWARD` state.
-
-![FSM Image](recursos/FSM.jpg)
+In this practice, I implemented an algorithm for a self-driving car to follow a line within a simple circuit.
 
 ## Implementation
-To implement the algorithm, I defined two functions that process laser sensor data: one converts laser distance readings from degrees to radians, and the other calculates the actual angle. Additionally, a third function randomizes an angle.
+To develop the algorithm, I used the image from the car's camera to follow the line.
 
-Adding randomization enhances the algorithm's robustness, as this unpredictability allows the robot to cover more area effectively.
+First, I processed the image and applied color filtering to detect only the red line on the road.
 
+Next, I selected specific pixels to track the line and determine the car’s position relative to it.
+
+Based on this, I defined several conditions to steer the car accordingly.
+
+##  PD controller
+To fine-tune the car's velocities, I implemented a PD controller that reacts to the distance between the line and the center of the image. In other words, the velocities are adjusted based on the difference between the car's desired path and its actual path (the error).
+
+The derivative part of the controller (D) was intended to reduce oscillations, but I couldn’t find an optimal value for it :(.
 
 ## Car in simple circuit
 <video width="600" controls>
