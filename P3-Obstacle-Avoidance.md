@@ -13,7 +13,7 @@ The total force is the sum of the attractive and repulsive forces. The robot adj
 
 - Linear Velocity (V): Calculated based on the angular velocity, making the robot slow down as it turns sharply.
 
-## Car in circuit
+## Demonstration
 <video width="600" controls>
   <source src="recursos/video-P3.mp4" type="video/mp4">
   Your browser does not support the video tag.
