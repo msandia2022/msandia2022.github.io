@@ -1,19 +1,19 @@
 # P3 - Obstacle Avoidance
-In this practice, I implemented an algorithm for a self-driving car to navigate towards waypoints while avoiding obstacles using the Virtual Force Field (VFF) Algorithm. The goal is to balance the attractive force pulling the robot towards its target with the repulsive forces pushing it away from nearby obstacles.
+In this practice, I implemented an algorithm for a self-driving car to navigate towards waypoints while avoiding obstacles using the **Virtual Force Field (VFF) Algorithm**. The goal is to balance the attractive force pulling the robot towards its target with the repulsive forces pushing it away from nearby obstacles.
 
 ![VFF Image](recursos/vff-car.png)
 
 ## Implementation
 ### Forces Calculation
-- *Attractive Force*: The robot calculates a vector pointing towards the target, with a magnitude scaled by the constant `ALPHA`. This force pulls the robot towards the goal.
+- **Attractive Force**: The robot calculates a vector pointing towards the target, with a magnitude scaled by the constant `ALPHA`. This force pulls the robot towards the goal.
 
-- Repulsive Force: The robot computes repulsive forces from obstacles detected by the laser scanner. Each laser point creates a repulsive vector inversely proportional to the square of the distance to the obstacle, scaled by `BETA`.
+- **Repulsive Force**: The robot computes repulsive forces from obstacles detected by the laser scanner. Each laser point creates a repulsive vector inversely proportional to the square of the distance to the obstacle, scaled by `BETA`.
 
 ### Resultant Force and Movement
 The total force is the sum of the attractive and repulsive forces. The robot adjusts its velocity based on the direction of this resultant force:
-- Angular Velocity (W): Determines how much the robot should turn towards the resultant force direction.
+- **Angular Velocity (W)**: Determines how much the robot should turn towards the resultant force direction.
 
-- Linear Velocity (V): Calculated based on the angular velocity, making the robot slow down as it turns sharply.
+- **Linear Velocity (V)**: Calculated based on the angular velocity, making the robot slow down as it turns sharply.
 
 ## Demonstration
 <video width="600" controls>
