@@ -1,6 +1,8 @@
 # P3 - Obstacle Avoidance
 In this practice, I implemented an algorithm for a self-driving car to navigate towards waypoints while avoiding obstacles using the Virtual Force Field (VFF) Algorithm. The goal is to balance the attractive force pulling the robot towards its target with the repulsive forces pushing it away from nearby obstacles.
 
+![VFF Image](vff-car.png)
+
 ## Implementation
 ### Forces Calculation
 - Attractive Force: The robot calculates a vector pointing towards the target, with a magnitude scaled by the constant ALPHA. This force pulls the robot towards the goal.
