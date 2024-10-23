@@ -6,6 +6,8 @@ Welcome to my blog! I'm Miriam Sandía, a Robotics Software Engineering student 
 
 [Project 2 - Follow Line](P2-Follow-Line.md)
 
+[Project 3 - Obstacle Avoidance](P3-Obstacle-Avoidance.md)
+
 <style>
   body {
     background-color: #121212; /* Fondo oscuro */
