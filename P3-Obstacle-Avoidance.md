@@ -5,9 +5,9 @@ In this practice, I implemented an algorithm for a self-driving car to navigate 
 
 ## Implementation
 ### Forces Calculation
-- Attractive Force: The robot calculates a vector pointing towards the target, with a magnitude scaled by the constant ALPHA. This force pulls the robot towards the goal.
+- *Attractive Force*: The robot calculates a vector pointing towards the target, with a magnitude scaled by the constant `ALPHA`. This force pulls the robot towards the goal.
 
-- Repulsive Force: The robot computes repulsive forces from obstacles detected by the laser scanner. Each laser point creates a repulsive vector inversely proportional to the square of the distance to the obstacle, scaled by BETA.
+- Repulsive Force: The robot computes repulsive forces from obstacles detected by the laser scanner. Each laser point creates a repulsive vector inversely proportional to the square of the distance to the obstacle, scaled by `BETA`.
 
 ### Resultant Force and Movement
 The total force is the sum of the attractive and repulsive forces. The robot adjusts its velocity based on the direction of this resultant force:
