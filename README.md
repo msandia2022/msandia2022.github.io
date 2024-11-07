@@ -8,6 +8,9 @@ Welcome to my blog! I'm Miriam Sandía, a Robotics Software Engineering student 
 
 [Project 3 - Obstacle Avoidance](P3-Obstacle-Avoidance.md)
 
+## Sistemas Empotrados y de Tiempo Real
+[Práctica 3 - Controlador Máquina Expendedora](P3-Máquina-Expendedora.md)
+
 <style>
   body {
     background-color: #121212; /* Fondo oscuro */
