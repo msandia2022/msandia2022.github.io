@@ -1,3 +1,12 @@
+# P3 - 
+
+
+## Demonstration
+<video width="600" controls>
+  <source src="recursos/video-maquina-exp.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 <style>
   body {
     background-color: #121212; /* Fondo oscuro */
