@@ -1,5 +1,5 @@
 # P4 - Global Navigation using TeleTaxi
-In this practice, I implemented an algorithm for a self-driving car to navigate towards a destination selected on the map while driving through the city using **Gradient Path Planning (GPP)**. The algorithm builds a **cost map** and an **obstacle map**, which together define the gradient used for navigation.
+In this practice, I implemented an algorithm for a self-driving car to navigate towards a destination selected on the map while driving through the city using **Wave Front Algorithm**. The algorithm builds a **cost map** and an **obstacle map**, which together define the gradient used for navigation.
 
 ![Map Image](recursos/map-image.png)
 
@@ -10,7 +10,7 @@ The **cost map** represents the propagation of costs starting from the destinati
 ### Obstacle map
 The **obstacle map** accounts for obstacles and applies penalties to nearby cells, creating a buffer zone around them. Obstacles are marked as zero, and a radius of penalized cells is defined to prevent the car from navigating too close to them.
 
-### Navigation
+### Navigation with Gradient Path Planning (GPP)
 The navigation process includes three key steps:
 1. **Cost Propagation**: The destination cell is assigned a cost of 1 to distinguish it clearly from obstacles, and costs propagate outward using a breadth-first search (BFS) approach.
 2. **Obstacle Penalty**: Obstacles and nearby cells are penalized to prevent collisions.
