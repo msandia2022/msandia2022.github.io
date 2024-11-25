@@ -1,5 +1,5 @@
 # P4 - Global Navigation using TeleTaxi
-In this practice, I implemented an algorithm for a self-driving car to navigate towards a destination selected on the map while driving through the city using **Wave Front Algorithm**. The algorithm builds a **cost map** and an **obstacle map**, which together define the gradient used for navigation.
+In this practice, I implemented an algorithm for a self-driving car to navigate towards a destination selected on the map while driving through the city using **Gradient Path Planning**. The **Wave Front Algorithm** builds a **cost map** and an **obstacle map**, which together define the gradient used for navigation.
 
 ![Map Image](recursos/mapa.png)
 
