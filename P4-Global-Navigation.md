@@ -1,11 +1,20 @@
 # P4 - Global Navigation using TeleTaxi
-In this practice, I implemented an algorithm for a self-driving car to navigate towards waypoints while avoiding obstacles using the **Virtual Force Field (VFF) Algorithm**. The goal is to balance the attractive force pulling the robot towards its target with the repulsive forces pushing it away from nearby obstacles.
+In this practice, I implemented an algorithm for a self-driving car to navigate towards a destination selected on the map while driving through the city using **Gradient Path Planning (GPP)**. The algorithm builds a **cost map** and an **obstacle map**, which together define the gradient used for navigation.
 
 ![Map Image](recursos/map-image.png)
 
 ## Implementation
 ### Cost map
+The **cost map** represents the propagation of costs starting from the destination. The cost at each cell is calculated based on the distance from the destination. It is initialized with infinite values and updated iteratively to propagate costs.
 
+### Obstacle map
+The **obstacle map** accounts for obstacles and applies penalties to nearby cells, creating a buffer zone around them. Obstacles are marked as zero, and a radius of penalized cells is defined to prevent the car from navigating too close to them.
+
+### Navigation
+The navigation process includes three key steps:
+1. **Cost Propagation**: The destination cell is assigned a cost of 1 to distinguish it clearly from obstacles, and costs propagate outward using a breadth-first search (BFS) approach.
+2. **Obstacle Penalty**: Obstacles and nearby cells are penalized to prevent collisions.
+3. **Gradient Navigation**: The car moves towards cells with the lowest gradient values, recalculating dynamically.
 
 ## Demonstration
 <video width="600" controls>
