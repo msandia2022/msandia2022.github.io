@@ -8,7 +8,7 @@ Welcome to my blog! I'm Miriam Sandía, a Robotics Software Engineering student 
 
 [Project 3 - Obstacle Avoidance](P3-Obstacle-Avoidance.md)
 
-[Project 4 - Global Navigation using TeleTaxi]()
+[Project 4 - Global Navigation using TeleTaxi](P4-Global-Navigation.md)
 
 ## Sistemas Empotrados y de Tiempo Real
 [Práctica 3 - Controlador Máquina Expendedora](P3-Máquina-Expendedora.md)
