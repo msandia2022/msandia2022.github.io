@@ -7,8 +7,12 @@ In this practice, I implemented an algorithm for a self-driving car to navigate 
 ### Cost map
 The **cost map** represents the propagation of costs starting from the destination. The cost at each cell is calculated based on the distance from the destination. It is initialized with infinite values and updated iteratively to propagate costs.
 
+![Map Image](recursos/cost-map.png)
+
 ### Obstacle map
 The **obstacle map** accounts for obstacles and applies penalties to nearby cells, creating a buffer zone around them. Obstacles are marked as zero, and a radius of penalized cells is defined to prevent the car from navigating too close to them.
+
+![Map Image](recursos/obstacle-map.png)
 
 ### Navigation with Gradient Path Planning (GPP)
 The navigation process includes three key steps:
