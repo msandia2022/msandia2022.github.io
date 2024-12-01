@@ -49,7 +49,7 @@ Este proyecto de máquina expendedora automatizada combina hardware y software d
 
 ## Demostración
 <video width="600" controls>
-  <source src="recursos/video-maquina-exp.mp4" type="video/mp4">
+  <source src="recursos/maq-exp.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
