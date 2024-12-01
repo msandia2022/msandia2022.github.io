@@ -44,6 +44,8 @@ Los sensores proporcionan información valiosa sobre las condiciones ambientales
 ## Conclusión
 Este proyecto de máquina expendedora automatizada combina hardware y software de manera efectiva, creando una solución que no solo proporciona un servicio rápido y eficiente, sino que también permite una interacción sencilla y personalizable tanto para los usuarios como para los administradores. Gracias a la integración de sensores, controles de precios y un sistema basado en hilos, el sistema es robusto, escalable y flexible.
 
+## Esquema de conexión
+
 ## Demostración
 <video width="600" controls>
   <source src="recursos/video-maquina-exp.mp4" type="video/mp4">
