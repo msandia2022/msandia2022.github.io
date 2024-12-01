@@ -18,6 +18,9 @@ El sistema transita de un estado a otro según las interacciones del usuario y l
 ## Tareas Concurrentes
 El sistema está diseñado para ejecutar varias tareas de forma simultánea utilizando hilos. Esto permite que el sistema realice diferentes acciones sin bloqueos, mejorando la eficiencia y la interacción con el usuario. Entre las tareas concurrentes, se incluyen el control de los LEDs, la actualización de la pantalla LCD, la detección de clientes y la monitorización de la temperatura y humedad. Cada una de estas tareas se maneja mediante hilos independientes, lo que optimiza el rendimiento general del sistema.
 
+## Watchdog Timer (WDT)
+El Watchdog Timer (habilitado con wdt_enable(WDTO_2S)) garantiza la recuperación automática en caso de fallos del sistema, como bloqueos o loops infinitos. Esto añade robustez al sistema, ya que si el programa no llama a wdt_reset() dentro de 2 segundos, el microcontrolador se reinicia automáticamente, asegurando la continuidad del servicio.
+
 ## Componentes Utilizados
 ### Sensores y Dispositivos
 El sistema utiliza una serie de sensores y dispositivos para interactuar con los usuarios y ofrecer información relevante. Los principales componentes son:
@@ -39,7 +42,7 @@ El sistema está diseñado para ser modular, lo que significa que es fácil aña
 Los sensores proporcionan información valiosa sobre las condiciones ambientales, lo que permite ofrecer un servicio más personalizado. Además, el modo administrativo ofrece al administrador la capacidad de modificar los precios de las bebidas y monitorizar el rendimiento del sistema.
 
 ## Conclusión
-Este proyecto de máquina expendedora automatizada combina hardware y software de manera efectiva, creando una solución que no solo proporciona un servicio rápido y eficiente, sino que también permite una interacción sencilla y personalizable tanto para los usuarios como para los administradores. Gracias a la integración de sensores, controles de precios y un sistema basado en hilos, el sistema es robusto, escalable y flexible, lo que lo convierte en una excelente solución para futuros desarrollos.
+Este proyecto de máquina expendedora automatizada combina hardware y software de manera efectiva, creando una solución que no solo proporciona un servicio rápido y eficiente, sino que también permite una interacción sencilla y personalizable tanto para los usuarios como para los administradores. Gracias a la integración de sensores, controles de precios y un sistema basado en hilos, el sistema es robusto, escalable y flexible.
 
 ## Demostración
 <video width="600" controls>
