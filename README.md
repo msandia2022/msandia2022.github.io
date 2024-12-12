@@ -15,7 +15,7 @@ Welcome to my blog! I'm Miriam Sandía, a Robotics Software Engineering student 
 ## Sistemas Empotrados y de Tiempo Real
 [Práctica 3 - Controlador Máquina Expendedora](P3-Máquina-Expendedora.md)
 
-[Práctica 4 - Follow Line (ft. Noelia Casado)](P4-Follow-Line.md)
+[Práctica 4 - Follow Line (ft. Noelia Casado)](P4-Follow-Line-SETR.md)
 
 <style>
   body {
