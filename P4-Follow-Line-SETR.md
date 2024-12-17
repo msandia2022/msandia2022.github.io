@@ -1,5 +1,8 @@
-# P4 - Follow Line by Noelia Casado and Miriam Sandía 
-In this practice, I implemented an algorithm for a 
+# P4 - Follow Line
+
+**Authors**: Noelia Casado and Miriam Sandía
+
+In this practice, we have implemented an algorithm that enables a robot to follow a line within a circuit. The robot's behavior is monitored and reported through messages sent using the MQTT protocol. The primary goals are to ensure precise line-following performance and real-time communication of the robot's state.
 
 ## Implementation
 
