@@ -10,11 +10,17 @@ The line-following algorithm is based on input from the robot's infrared sensor.
 
 ### MQTT Communication
 MQTT is used for lightweight and efficient message transmission. The robot publishes its state updates to an MQTT topic.
+
 -START_LAP: Notifies the beginning of a lap, signaling the robot is operational and tracking time.
+
 -END_LAP: Marks the completion of a lap, providing the total time taken.
+
 -OBSTACLE_DETECTED: Alerts the detection of an obstacle, including the distance to the obstacle.
+
 -LINE_LOST: Indicates the robot has lost the line and is attempting to recover.
+
 -LINE_FOUND: Confirms the robot has regained the line after losing it.
+
 -PING: Periodic "heartbeat" message to confirm the robot's active state and uptime.
 
 ## Conclusion
