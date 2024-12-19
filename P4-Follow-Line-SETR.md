@@ -6,14 +6,17 @@ In this practice, we have implemented an algorithm that enables a robot to follo
 
 ## Implementation
 ### Line-Following Algorithm
+The line-following algorithm is based on input from the robot's infrared sensor. It detects the position of the line relative to the robot and adjusts its trajectory using:
+
 ### MQTT Communication
+MQTT is used for lightweight and efficient message transmission. The robot publishes its state updates to an MQTT topic.
 
 ## Conclusion
 This practice demonstrated the implementation of a line-following robot capable of real-time communication using MQTT. The system achieved reliable line tracking and accurate state reporting.
 
 ## Demonstration
 <video width="600" controls>
-  <source src="recursos/video-P5.mp4" type="video/mp4">
+  <source src="recursos/P4-SETR.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
