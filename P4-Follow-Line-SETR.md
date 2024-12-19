@@ -12,18 +12,19 @@ In situations where none of the sensors detect the line, the robot does not stop
 
 ### MQTT Communication
 MQTT is used for lightweight and efficient message transmission. The robot publishes its state updates to an MQTT topic.
+Each message is formatted in JSON:
 
--START_LAP: Notifies the beginning of a lap, signaling the robot is operational and tracking time.
+**START_LAP**: Notifies the beginning of a lap, signaling the robot is operational and tracking time.
 
--END_LAP: Marks the completion of a lap, providing the total time taken.
+**END_LAP**: Marks the completion of a lap, providing the total time taken.
 
--OBSTACLE_DETECTED: Alerts the detection of an obstacle, including the distance to the obstacle.
+**OBSTACLE_DETECTED**: Alerts the detection of an obstacle, including the distance to the obstacle.
 
--LINE_LOST: Indicates the robot has lost the line and is attempting to recover.
+**LINE_LOST**: Indicates the robot has lost the line and is attempting to recover.
 
--LINE_FOUND: Confirms the robot has regained the line after losing it.
+**LINE_FOUND**: Confirms the robot has regained the line after losing it.
 
--PING: Periodic "heartbeat" message to confirm the robot's active state and uptime.
+**PING**: Periodic "heartbeat" message to confirm the robot's active state and uptime.
 
 ## Conclusion
 This practice demonstrated the implementation of a line-following robot capable of real-time communication using MQTT. The system achieved reliable line tracking and accurate state reporting.
