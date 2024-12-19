@@ -6,7 +6,9 @@ In this practice, we have implemented an algorithm that enables a robot to follo
 
 ## Implementation
 ### Line-Following Algorithm
-The line-following algorithm is based on input from the robot's infrared sensor. It detects the position of the line relative to the robot and adjusts its trajectory depending on where it last saw the line.
+The line-following algorithm uses data from the robot's infrared sensors to detect the position of the line relative to its trajectory. These sensors are strategically placed on the underside of the robot, enabling it to determine whether the line is in the center, to the left, or to the right. Based on which of the three sensors detects the line, the robot adjusts its movement: it moves straight if the center sensor detects the line, turns left if the left sensor detects it, or turns right if the right sensor detects it.
+
+In situations where none of the sensors detect the line, the robot does not stop immediately. Instead, it uses previously stored information about the last position where the line was detected. Using this memory, the robot continues moving in the corresponding direction, making small adjustments to try to find the line again. This mechanism allows the robot to recover its path even in more challenging sections, such as sharp turns or brief interruptions in the line.
 
 ### MQTT Communication
 MQTT is used for lightweight and efficient message transmission. The robot publishes its state updates to an MQTT topic.
