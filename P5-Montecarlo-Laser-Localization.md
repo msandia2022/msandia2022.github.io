@@ -6,6 +6,7 @@ This system enables the robot to navigate a simulated environment while maintain
 ## Implementation
 ### Algorithm Steps
 **Particle Initialization**:
+
 Particles are uniformly distributed across the map, and their positions are transformed into the world coordinate system using `GUI.mapToPose`.
 
 **Laser Data Processing**:
