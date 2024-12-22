@@ -1,4 +1,4 @@
-# P5 - Montecarlo Laser Localization
+# P5 - Monte Carlo Laser Localization
 
 ![Initialized Particles Image](recursos/particulas.png)
 
