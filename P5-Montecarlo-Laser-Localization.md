@@ -4,7 +4,7 @@ In this practice, I implemented the Monte Carlo Localization **(MCL)** algorithm
 This system enables the robot to navigate a simulated environment while maintaining accurate localization on the map. Notable features include handling noise in both motion and sensor readings, simulating virtual laser measurements for map-based comparisons, and resampling particles to enhance pose estimation accuracy.
 
 ## Implementation
-For the implementation I followed the following steps:
+For the implementation I followed these steps:
 ### Particle Initialization:
 
 Particles are uniformly distributed across the map, and their positions are transformed into the world coordinate system using `GUI.mapToPose`.
