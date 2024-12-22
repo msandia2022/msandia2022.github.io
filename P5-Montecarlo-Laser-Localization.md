@@ -4,16 +4,25 @@ In this practice, I implemented the Monte Carlo Localization **(MCL)** algorithm
 This system enables the robot to navigate a simulated environment while maintaining accurate localization on the map. Notable features include handling noise in both motion and sensor readings, simulating virtual laser measurements for map-based comparisons, and resampling particles to enhance pose estimation accuracy.
 
 ## Implementation
-### Algorithm Steps
-#### Particle Initialization:
+For the implementation I followed the following steps:
+### Particle Initialization:
 
 Particles are uniformly distributed across the map, and their positions are transformed into the world coordinate system using `GUI.mapToPose`.
 
-#### Laser Data Processing:
+### Laser Data Processing:
 - **Real Laser**: Real laser measurements are read using HAL.getLaserData(), and beams are filtered to match the number defined in `LASER_NUM_BEAMS`.
 - **Virtual Laser**: Virtual laser beams are generated for each particle using ray tracing with a Digital Differential Analyzer **(DDA)** algorithm.
 
+### Prediction Step:
+Particles are propagated based on the robot's odometry data (`HAL.getOdom`), with added noise to account for uncertainty.
 
+### Weight Calculation:
+Each particle's weight is computed by comparing its theoretical laser measurements (via ray tracing) with the robot's real laser readings.
+
+Particles outside the map or in obstacle regions are assigned zero weight.
+
+### Resampling:
+Particles are resampled using the roulette wheel method, where particles with higher weights have a greater chance of selection.
 
 ## Demonstration
 <video width="600" controls>
