@@ -1,6 +1,6 @@
 # P5 - Montecarlo Laser Localization
 
-![Map Image](recursos/particles.png)
+![Initialized Particles Image](recursos/particulas.png)
 
 In this practice, I implemented the Monte Carlo Localization **(MCL)** algorithm to estimate a robot's pose within a known map using laser sensor data. The algorithm employs a particle filter to maintain multiple pose hypotheses, iteratively refining them based on sensor observations and motion model predictions.
 
