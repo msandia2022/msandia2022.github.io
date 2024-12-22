@@ -11,7 +11,7 @@ Particles are uniformly distributed across the map, and their positions are tran
 
 **Laser Data Processing**:
 - **Real Laser**: Real laser measurements are read using HAL.getLaserData(), and beams are filtered to match the number defined in `LASER_NUM_BEAMS`.
-- **Virtual Laser**: Virtual laser beams are generated for each particle using ray tracing with a Digital Differential Analyzer (**DDA**) algorithm.
+- **Virtual Laser**: Virtual laser beams are generated for each particle using ray tracing with a Digital Differential Analyzer **(DDA)** algorithm.
 
 
 
