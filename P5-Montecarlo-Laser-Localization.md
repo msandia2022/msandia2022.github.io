@@ -1,5 +1,5 @@
 # P5 - Montecarlo Laser Localization
-In this practice, I implemented the Monte Carlo Localization (MCL) algorithm to estimate a robot's pose within a known map using laser sensor data. The algorithm employs a particle filter to maintain multiple pose hypotheses, iteratively refining them based on sensor observations and motion model predictions.
+In this practice, I implemented the Monte Carlo Localization **(MCL)** algorithm to estimate a robot's pose within a known map using laser sensor data. The algorithm employs a particle filter to maintain multiple pose hypotheses, iteratively refining them based on sensor observations and motion model predictions.
 
 This system enables the robot to navigate a simulated environment while maintaining accurate localization on the map. Notable features include handling noise in both motion and sensor readings, simulating virtual laser measurements for map-based comparisons, and resampling particles to enhance pose estimation accuracy.
 
@@ -11,7 +11,7 @@ Particles are uniformly distributed across the map, and their positions are tran
 
 **Laser Data Processing**:
 - **Real Laser**: Real laser measurements are read using HAL.getLaserData(), and beams are filtered to match the number defined in `LASER_NUM_BEAMS`.
-- **Virtual Laser**: Virtual laser beams are generated for each particle using ray tracing with a Digital Differential Analyzer (DDA) algorithm.
+- **Virtual Laser**: Virtual laser beams are generated for each particle using ray tracing with a Digital Differential Analyzer (**DDA**) algorithm.
 
 
 
