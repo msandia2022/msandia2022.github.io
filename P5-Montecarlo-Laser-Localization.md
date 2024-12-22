@@ -25,6 +25,7 @@ Particles outside the map or in obstacle regions are assigned zero weight.
 Particles are resampled using the roulette wheel method, where particles with higher weights have a greater chance of selection.
 
 ## Demonstration
+Here, I initialize **500 particles** and retain the readings of **10 laser beams** for processing.
 <video width="600" controls>
   <source src="recursos/video-P5.mp4" type="video/mp4">
   Your browser does not support the video tag.
