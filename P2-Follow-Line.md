@@ -2,7 +2,8 @@
 In this practice, I implemented an algorithm for a self-driving car to follow a line within a simple circuit.
 
 ## Mejoras
-HSV FILTER
+HSV FILTER: Ahora el coche puede circular perfectamente en cualquier circuito, ya no confunde lineas blancas con lineas rojas.
+
 
 ## Implementation
 To develop the algorithm, I used the image from the car's camera to follow the line.
