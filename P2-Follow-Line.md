@@ -1,6 +1,9 @@
 # P2 - Follow Line
 In this practice, I implemented an algorithm for a self-driving car to follow a line within a simple circuit.
 
+## Mejoras
+HSV FILTER
+
 ## Implementation
 To develop the algorithm, I used the image from the car's camera to follow the line.
 
