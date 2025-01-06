@@ -4,6 +4,8 @@ In this practice, I implemented an algorithm for a self-driving car to follow a 
 ## Mejoras
 HSV FILTER: Ahora el coche puede circular perfectamente en cualquier circuito, ya no confunde lineas blancas con lineas rojas.
 
+PID: añadidas las ganancias D e I.
+
 
 ## Implementation
 To develop the algorithm, I used the image from the car's camera to follow the line.
