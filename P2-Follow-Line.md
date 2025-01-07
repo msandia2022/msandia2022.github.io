@@ -12,19 +12,21 @@ I upgraded the controller by introducing derivative (D) and integral (I) compone
 The algorithm uses the car's camera feed to detect and follow the red line. Below are the main steps:
 
 1. Image Processing:
+
    The image is converted to HSV color space to isolate red hues using a binary mask.
+
    A debug image is created to visualize the detected line.
 
-2. Reference Pixels:
+3. Reference Pixels:
    Specific reference points (center, left, and right) are extracted from the image to determine the car's position relative to the line.
 
-3. Position Error Calculation:
+4. Position Error Calculation:
    The algorithm computes the error between the expected and actual line position in the image.
 
-4. Control Signals:
+5. Control Signals:
    A PID controller calculates the linear and angular velocities based on the position error, ensuring smooth and responsive adjustments.
 
-5. Motion Commands:
+6. Motion Commands:
    The car moves forward, turns left, or turns right depending on the detected line position.
 
 ##  PID controller
