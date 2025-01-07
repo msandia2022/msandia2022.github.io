@@ -2,10 +2,10 @@
 In this practice, I implemented an algorithm for a self-driving car to follow a red line within a simple circuit. The algorithm processes camera input, detects the line, and adjusts the car's motion using a PID controller.
 
 ## Improvements
-### HSV Filter
+### HSV Filter:
 The line detection was enhanced with a more robust HSV filter. The car can now accurately differentiate the red line from other colors, such as white, ensuring reliable navigation on any circuit.
 
-### PID Controller
+### PID Controller:
 I upgraded the controller by introducing derivative (D) and integral (I) components to improve stability and accuracy. This refinement reduces oscillations and improves line-following precision.
 
 ## Implementation
