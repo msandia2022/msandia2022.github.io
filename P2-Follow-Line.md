@@ -23,7 +23,7 @@ The derivative part of the controller (D) was intended to reduce oscillations, b
 
 ## Car in simple circuit
 <video width="600" controls>
-  <source src="recursos/video-PX.mp4" type="video/mp4">
+  <source src="recursos/video-P2.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
