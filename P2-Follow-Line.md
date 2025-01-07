@@ -1,27 +1,44 @@
 # P2 - Follow Line
-In this practice, I implemented an algorithm for a self-driving car to follow a line within a simple circuit.
+In this practice, I implemented an algorithm for a self-driving car to follow a red line within a simple circuit. The algorithm processes camera input, detects the line, and adjusts the car's motion using a PID controller.
 
-## Mejoras
-HSV FILTER: Ahora el coche puede circular perfectamente en cualquier circuito, ya no confunde lineas blancas con lineas rojas.
+## Improvements
+### HSV Filter
+The line detection was enhanced with a more robust HSV filter. The car can now accurately differentiate the red line from other colors, such as white, ensuring reliable navigation on any circuit.
 
-PID: añadidas las ganancias D e I.
-
+### PID Controller
+I upgraded the controller by introducing derivative (D) and integral (I) components to improve stability and accuracy. This refinement reduces oscillations and improves line-following precision.
 
 ## Implementation
-To develop the algorithm, I used the image from the car's camera to follow the line.
+The algorithm uses the car's camera feed to detect and follow the red line. Below are the main steps:
 
-First, I processed the image and applied color filtering to detect only the red line on the road.
+1. Image Processing:
+    The image is converted to HSV color space to isolate red hues using a binary mask.
+    A debug image is created to visualize the detected line.
 
-Next, I selected specific pixels to track the line and determine the car’s position relative to it.
+2. Reference Pixels:
+    Specific reference points (center, left, and right) are extracted from the image to determine the car's position relative to the line.
 
-Based on this, I defined several conditions to steer the car accordingly.
+3. Position Error Calculation:
+    The algorithm computes the error between the expected and actual line position in the image.
 
-##  PD controller
-To fine-tune the car's velocities, I implemented a PD controller that reacts to the distance between the line and the center of the image. In other words, the velocities are adjusted based on the difference between the car's desired path and its actual path (the error).
+4. Control Signals:
+    A PID controller calculates the linear and angular velocities based on the position error, ensuring smooth and responsive adjustments.
 
-The derivative part of the controller (D) was intended to reduce oscillations, but I couldn’t find an optimal value for it :(.
+5. Motion Commands:
+    The car moves forward, turns left, or turns right depending on the detected line position.
+
+##  PID controller
+The PID controller adjusts the car's motion to minimize the error between the desired path (center of the image) and the actual path:
+
+- Proportional (P): Reacts to the current error.
+
+- Derivative (D): Reduces oscillations by considering the rate of change of the error.
+
+- Integral (I): Addresses accumulated errors over time.
 
 ## Car in simple circuit
+The car successfully follows the red line in a simple circuit, navigating forward, left, and right turns effectively. The improved HSV filter ensures robust line detection, and the PID controller enhances stability and responsiveness. The circuit is completed in 94 seconds.
+
 <video width="600" controls>
   <source src="recursos/video-P2.mp4" type="video/mp4">
   Your browser does not support the video tag.
