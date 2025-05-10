@@ -8,7 +8,7 @@ Explicación detallada de las gráficas generadas, describiendo el comportamient
 
 
 ## ACCESO A ROSBAG
-![rosbag](recursos/esquema_maq_exp.png)
+![rosbag](recursos/rosbag2_2025_05_10-20_23_55)
 Enlace de descarga del rosbag generado (máximo 1 GB). El archivo puede estar en el repositorio o almacenado en una nube (Google Drive, OneDrive, Dropbox, etc.). El rosbag debe incluir únicamente los topics /imu y /joint_states.
 
 ## Vídeos
