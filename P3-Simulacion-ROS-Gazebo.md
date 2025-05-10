@@ -2,9 +2,11 @@
     
 ## TIEMPO VS G-PARCIAL
 Explicación detallada de las gráficas generadas, describiendo el comportamiento del robot en momentos específicos durante la teleoperación.
+📦 [!grafica](https://github.com/msandia2022/msandia2022.github.io/tree/main/recursos/rosbag2_2025_05_10-20_23_55)
 
 ## TIEMPO VS POSICIÓN DE LAS RUEDAS
 Explicación detallada de las gráficas generadas, describiendo el comportamiento del robot en momentos específicos durante la teleoperación.
+📦 [!grafica](https://github.com/msandia2022/msandia2022.github.io/tree/main/recursos/rosbag2_2025_05_10-20_23_55)
 
 
 ## ACCESO A ROSBAG
