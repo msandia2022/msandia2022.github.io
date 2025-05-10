@@ -13,9 +13,9 @@ Enlace a rosbag en GitHub:
 📦 [rosbag](https://github.com/msandia2022/msandia2022.github.io/tree/main/recursos/rosbag2_2025_05_10-20_23_55)
 
 
-## Vídeos
+## VÍDEO EJECUCIÓN
 <video width="600" controls>
-  <source src="recursos/maq-exp.mp4" type="video/mp4">
+  <source src="recursos/Ejecución_rover.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
