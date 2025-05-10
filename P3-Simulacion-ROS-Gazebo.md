@@ -10,7 +10,7 @@ Explicación detallada de las gráficas generadas, describiendo el comportamient
 ## ACCESO A ROSBAG
 Enlace a ROSBAG en GitHub:
 
-:arrow_right: ![rosbag](recursos/rosbag2_2025_05_10-20_23_55)
+[rosbag](./recursos/rosbag2_2025_05_10-20_23_55)
 
 
 ## Vídeos
