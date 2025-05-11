@@ -5,7 +5,9 @@ Explicación detallada de las gráficas generadas, describiendo el comportamient
 
 ![grafica](/recursos/apartado7.png)
 
-![GIF efforts](recursos/gif_efforts.gif)
+
+<img src="recursos/gif_efforts.gif" width="600">
+
 
 
 
