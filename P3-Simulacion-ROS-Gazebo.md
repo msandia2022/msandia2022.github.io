@@ -5,6 +5,9 @@ Explicación detallada de las gráficas generadas, describiendo el comportamient
 
 ![grafica](/recursos/apartado7.png)
 
+![GIF efforts](recursos/gif_efforts.gif)
+
+
 
 ## TIEMPO VS POSICIÓN DE LAS RUEDAS
 Explicación detallada de las gráficas generadas, describiendo el comportamiento del robot en momentos específicos durante la teleoperación.
