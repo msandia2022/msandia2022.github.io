@@ -12,9 +12,16 @@ Explicación detallada de las gráficas generadas, describiendo el comportamient
 
 
 ## TIEMPO VS POSICIÓN DE LAS RUEDAS
-Explicación detallada de las gráficas generadas, describiendo el comportamiento del robot en momentos específicos durante la teleoperación.
 
 <img src="/recursos/apartado5.png" width="900">
+
+Esta gráfica muestra la evolución de la posición de las ruedas del rover, lo que permite analizar cómo se ha desplazado para asistir al brazo robótico.
+
+Al inicio, podemos observar un aumento rápido y simultáneo de todas las ruedas, indica que el rover comienza a moverse con trayectoria recta.
+
+A la mitad, hay variaciones desiguales entre las ruedas delanteras y traseras, lo que reflejan las maniobras de reposicionamiento para recoger el cubo correctamente.
+
+Al final, las ruedas se mantienen constantes, esto se debe a que el rover se mantiene estacionario mientras se ejecuta el pick and place.
 
 <img src="recursos/gif_pos.gif" width="900">
 
