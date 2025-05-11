@@ -16,6 +16,7 @@ Explicación detallada de las gráficas generadas, describiendo el comportamient
 
 <img src="/recursos/apartado5.png" width="900">
 
+<img src="recursos/gif_pos.gif" width="900">
 
 ## ACCESO A ROSBAG
 Enlace a rosbag en GitHub:
