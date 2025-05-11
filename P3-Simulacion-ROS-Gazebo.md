@@ -3,12 +3,12 @@
 ## TIEMPO VS G-PARCIAL
 Explicación detallada de las gráficas generadas, describiendo el comportamiento del robot en momentos específicos durante la teleoperación.
 
-[!grafica](/recursos/apartado7.txt)
+![grafica](/recursos/apartado7.txt)
 
 ## TIEMPO VS POSICIÓN DE LAS RUEDAS
 Explicación detallada de las gráficas generadas, describiendo el comportamiento del robot en momentos específicos durante la teleoperación.
 
-[!grafica](/recursos/apartado5.txt)
+![grafica](/recursos/apartado5.txt)
 
 
 ## ACCESO A ROSBAG
