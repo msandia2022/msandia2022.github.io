@@ -30,6 +30,9 @@ Enlace a rosbag en GitHub:
   Your browser does not support the video tag.
 </video>
 
+## GALERÍA
+<img src="recursos/Captura 20desde 202025-05-10 2015-20-12.png" width="900">
+
 <style>
   body {
    background-color: #121212; /* Fondo oscuro */
