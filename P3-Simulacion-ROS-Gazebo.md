@@ -32,13 +32,15 @@ Enlace a rosbag en GitHub:
 
 ## GALERÍA
 
+<img src="recursos/apartado3.png" width="900">
+
+<img src="recursos/Captura desde 2025-05-10 20-29-24.png" width="900">
+
 <img src="recursos/apartado2.png" width="900">
 
 <img src="recursos/Captura desde 2025-05-10 15-20-12.png" width="900">
 
-<img src="recursos/Captura desde 2025-05-10 20-29-24.png" width="900">
 
-<img src="recursos/apartado3.png" width="900">
 
 
 
