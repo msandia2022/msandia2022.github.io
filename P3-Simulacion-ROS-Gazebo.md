@@ -31,7 +31,9 @@ Enlace a rosbag en GitHub:
 </video>
 
 ## GALERÍA
-<img src="recursos/Captura 20desde 202025-05-10 2015-20-12.png" width="900">
+<img src="recursos/Captura desde 2025-05-10 15-20-12.png" width="900">
+
+
 
 <style>
   body {
