@@ -1,13 +1,20 @@
 # P3 - Simulación en ROS y Gazebo
     
 ## TIEMPO VS G-PARCIAL
-Explicación detallada de las gráficas generadas, describiendo el comportamiento del robot en momentos específicos durante la teleoperación.
-
 
 <img src="/recursos/efforts_sombreado.png" width="900">
 
-<img src="recursos/gif_efforts.gif" width="900">
+Durante el intervalo sombreado, se identifica una secuencia de movimientos de pick and place.
 
+0_SCARA_L3_link_joint, es el joint encargado de poder alcanzar el cubo. Podemos ver como se mantiene constante el valor de esfuerzo hasta que el brazo hace contacto con el cubo, en ese momento el valor de effort cae en picado. 
+
+A continuación, se recoge el cubo, podemos observar como los joints de los dedos de la pinza (0_SCARA_EF_3_link_joint y 0_SCARA_EF_4_link_joint) suben su effort.
+
+Una vez que el cubo está agarrado, el brazo comienza a subir de nuevo por lo que el valor de 0_SCARA_L3_link_joint vuelve a estabilizarse.
+
+Finalmente, se mueven el resto de joints para llevar el cubo al almacén del robot, aunque este paso no puede completarse depositando el cubo ya que el cubo colisiona contra el propio almacén (imagen adjunta en el apartado GALERÍA del blog)
+
+<img src="recursos/gif_efforts.gif" width="900">
 
 
 
@@ -24,6 +31,7 @@ A la mitad, hay variaciones desiguales entre las ruedas delanteras y traseras, l
 Al final, las ruedas se mantienen constantes, esto se debe a que el rover se mantiene estacionario mientras se ejecuta el pick and place.
 
 <img src="recursos/gif_pos.gif" width="900">
+
 
 ## ACCESO A ROSBAG
 Enlace a rosbag en GitHub:
