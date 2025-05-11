@@ -3,10 +3,10 @@
 ## TIEMPO VS G-PARCIAL
 Explicación detallada de las gráficas generadas, describiendo el comportamiento del robot en momentos específicos durante la teleoperación.
 
-![grafica](/recursos/efforts_sombreado.png)
 
+<img src="/recursos/efforts_sombreado.png" width="900">
 
-<img src="recursos/gif_efforts.gif" width="600">
+<img src="recursos/gif_efforts.gif" width="900">
 
 
 
@@ -14,7 +14,7 @@ Explicación detallada de las gráficas generadas, describiendo el comportamient
 ## TIEMPO VS POSICIÓN DE LAS RUEDAS
 Explicación detallada de las gráficas generadas, describiendo el comportamiento del robot en momentos específicos durante la teleoperación.
 
-![grafica](/recursos/apartado5.png)
+<img src="/recursos/apartado5.png" width="900">
 
 
 ## ACCESO A ROSBAG
