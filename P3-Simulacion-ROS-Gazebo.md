@@ -3,7 +3,7 @@
 ## TIEMPO VS G-PARCIAL
 Explicación detallada de las gráficas generadas, describiendo el comportamiento del robot en momentos específicos durante la teleoperación.
 
-![grafica](/recursos/apartado7.png)
+![grafica](/recursos/efforts_sombreado.png)
 
 
 <img src="recursos/gif_efforts.gif" width="600">
