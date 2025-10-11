@@ -1,5 +1,11 @@
 # P1 - Localized Vacuum Cleaner
 
+## Robot cleaning for 16 minutes
+<video width="600" controls>
+  <source src="recursos/limpieza_x16.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 <style>
   body {
     background-color: #121212; /* Fondo oscuro */
