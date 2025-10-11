@@ -28,7 +28,8 @@ Mediante una regresión lineal (`np.polyfit`) con varios puntos de referencia, o
 Esto es esencial para que el robot “sepa” en qué celda se encuentra en todo momento, basándose en sus coordenadas reales (`HAL.getPose3d()`).
 
 Para ello desplacé el robot por el simulador a 4 puntos conocidos en el mapa y apunté sus coordenadas.
-![Image](recursos/values_regression.png)
+
+![Linear regression](recursos/values_regression.png)
 
 ## 4. Diseño del algoritmo de barrido BSA
 
@@ -37,7 +38,8 @@ Implementé el **Backtracking Spiral Algorithm** que sigue un patrón en espiral
 Esto permitió cubrir prácticamente toda el área accesible.
 
 También añadí un **sistema de detección de celdas de retorno**, marcadas en azul, para evitar colisiones en trayectorias entre celdas no adyacentes. Si el robot encontraba una de estas celdas, recalculaba una ruta corta con un BFS (Breadth-First Search), garantizando que pudiera volver a zonas accesibles.
-[añadir gif]
+
+![GIF](recursos/return_cell.gif)
 
 ## 5. Control de movimiento y orientación
 
@@ -52,12 +54,14 @@ También añadí una rutina de **detección de obstáculos móviles**, aprovecha
 Durante las pruebas, la **visualización con `WebGUI.showNumpy()`** fue fundamental.  
 Pude observar en tiempo real el mapa, las celdas libres, los obstáculos, la ruta planificada (amarillo) y las zonas ya limpiadas (verde).  
 Esto me permitió detectar errores de indexado, ajustes en las transformaciones y pequeños fallos de precisión en la localización.
-[añadir foto]
+
+![Depuration map](recursos/depuration-map.png)
 
 ## 7. Resultados y conclusiones
 
 Tras varias iteraciones, pruebas y correcciones, el sistema logró realizar un **recorrido completo y ordenado del entorno**, marcando las zonas limpias y evitando obstáculos fijos sin necesidad de sensores de contacto.
 
+![Result](recursos/result-aspiradora.png)
 
 ## 8. Conclusiones
 
