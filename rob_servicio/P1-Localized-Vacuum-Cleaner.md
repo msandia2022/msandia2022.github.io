@@ -28,7 +28,7 @@ Mediante una regresión lineal (`np.polyfit`) con varios puntos de referencia, o
 Esto es esencial para que el robot “sepa” en qué celda se encuentra en todo momento, basándose en sus coordenadas reales (`HAL.getPose3d()`).
 
 Para ello desplacé el robot por el simulador a 4 puntos conocidos en el mapa y apunté sus coordenadas.
-[añadir gif]
+![Image](recursos/values_regression.png)
 
 ## 4. Diseño del algoritmo de barrido BSA
 
