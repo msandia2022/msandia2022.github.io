@@ -4,34 +4,38 @@
 
 En este proyecto he desarrollado un sistema de .
 
-## 1. Algoritmo de barrido
+## 1. Aproximación a la zona
 
 Transformación de coordenadas.
 
-## 2. Detección de caras
+## 2. Algoritmo de barrido
 
+Para buscar personas de la forma más minuciosa posible elegí un area concreta, saque todas sus coordenadas e hice que el dron se desplazara por todas ellas siguiendo un patrón de zig zag.
 
-## 3. Gestión de la batería
+## 3. Detección de caras
 
+A
 
+## 4. Gestión de la batería
 
-## 6. Visualización y depuración
+Esta funcionalidad la implementé llevando un contador de tiempo, cuando el dron alcanza los 10 minutos de vuelo el dron vuelve a la base para un cambio de batería. A continuación, volverá a despegar para continuar con el barrido por donde iba.
 
-Durante las pruebas, la **visualización con `WebGUI.showNumpy()`** fue fundamental.  
-Pude observar en tiempo real el mapa, las celdas libres, los obstáculos, la ruta planificada (amarillo) y las zonas ya limpiadas (verde).  
-Esto me permitió detectar errores de indexado, ajustes en las transformaciones y pequeños fallos de precisión en la localización.
+## 5. Visualización y depuración
 
+Durante las pruebas, la **visualización con `WebGUI.showImage()`** fue fundamental.  
+Pude observar en tiempo real la detección de las caras.  
+Esto me permitió detectar que era necesario rotar la imagen ya que según la posición de la cara esta se detectaba o no.
 
-## 7. Resultados y conclusiones
+## 6. Resultados y conclusiones
 
+A
 
-
-## 8. Video demostrativo
+## 7. Video demostrativo
 
 En este vídeo podemos ver al
 
 <video width="600" controls>
-  <source src="recursos/limpieza_x16.mp4" type="video/mp4">
+  <source src="recursos/rescate.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
