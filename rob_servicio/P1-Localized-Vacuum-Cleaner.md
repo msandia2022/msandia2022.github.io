@@ -57,7 +57,7 @@ Esto me permitió detectar errores de indexado, ajustes en las transformaciones 
 
 ![Depuration map](recursos/depuration-map.png)
 
-## 7. Resultados y conclusiones
+## 7. Resultados
 
 Tras varias iteraciones, pruebas y correcciones, el sistema logró realizar un **recorrido completo y ordenado del entorno**, marcando las zonas limpias y evitando obstáculos fijos sin necesidad de sensores de contacto.
 
