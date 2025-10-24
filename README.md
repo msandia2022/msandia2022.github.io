@@ -4,6 +4,8 @@ Welcome to my blog! My name is Miriam Sandía, I'm a Robotics Software Engineeri
 ## Robótica de Servicio
 [Práctica 1 - Localized Vacuum Cleaner](rob_servicio/P1-Localized-Vacuum-Cleaner.md)
 
+[Práctica 2 - Rescue People](rob_servicio/P2-Rescue-People.md)
+
 ## Modelado y Simulación de Robots
 [Práctica 3 - Simulación en ROS y Gazebo](P3-Simulacion-ROS-Gazebo.md)
 
