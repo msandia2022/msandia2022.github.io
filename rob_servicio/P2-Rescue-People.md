@@ -2,11 +2,11 @@
 
 ## Introducción
 
-En este proyecto he desarrollado un sistema de .
-
+En este proyecto he desarrollado un sistema de rescate de víctimas con un dron. Estas son detectadas mediante la cámara y se almacenan sus posiciones para su posterior rescate.
+ 
 ## 1. Aproximación a la zona
 
-Transformación de coordenadas.
+Para esto fue necesario realizar una transformación de coordenadas. Conocíamos la posición en coordenadas GPS donde se perdió la señal del avión y del barco donde se encuentran el dron y a la vez conociamos la posición del dron en coordenadas del dron. Para solucionarlo transformamos las coordenadas GPS en coordenadas UTM, una vez hecho esto calculabamos la diferencia entre las coordenadas de la zona aproximada de rescate y las del dron. Como el dron se encuentra en la posición (0, 0), obtenemos directamente las coordenadas de zona de rescate en coordenadas del dron. 
 
 ## 2. Algoritmo de barrido
 
