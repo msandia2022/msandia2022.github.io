@@ -1,5 +1,5 @@
 # P2 - Rescue People
-
+![Rescue People](recursos/rescue-people.png)
 ## Introducción
 
 En este proyecto he desarrollado un **sistema de rescate de víctimas con un dron**. Estas son detectadas mediante la cámara ventral utilizando un detector facial, y se almacenan sus posiciones para su posterior rescate. El dron recorre una zona de búsqueda definida previamente, vuelve a la base cuando detecta batería baja y es capaz de reanudar la misión tras recargar.
