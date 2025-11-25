@@ -65,7 +65,7 @@ En este vídeo se puede observar el ciclo completo del robot holonómico: planif
 En este vídeo se puede observar el ciclo del robot Ackermann.
 
 <video width="600" controls>
-  <source src="recursos/robot_almacen_ack.mp4" type="video/mp4">
+  <source src="../recursos/robot_almacen_ack.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
