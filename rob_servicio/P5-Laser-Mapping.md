@@ -52,28 +52,15 @@ La interfaz WebGUI muestra en tiempo real la evolución del mapeo, lo que facili
 
 ---
 
-## 5. Bucle principal del sistema
-
-El proceso completo de navegación y mapeo se ejecuta de forma continua dentro de un bucle que combina:
-
-- lectura del láser,  
-- decisión de movimiento reactivo,  
-- actualización del mapa,  
-- y sincronización mediante el módulo de frecuencia.
-
-Gracias a este flujo, el robot mantiene una ejecución estable, sin pausas perceptibles y con una respuesta inmediata ante cambios del entorno.
-
----
-
-## 6. Resultados y conclusiones
+## 5. Resultados y conclusiones
 
 El robot fue capaz de desplazarse de forma autónoma evitando obstáculos y generando un mapa en tiempo real de alta claridad. El sistema reactivo permitió que el robot navegara de manera simple pero eficaz, mientras que el mapeado con láser produjo una representación detallada del entorno con zonas libres bien definidas y obstáculos marcados de forma nítida.
 
-Este enfoque demuestra que incluso sin planificación global ni algoritmos complejos, un robot es capaz de desenvolverse adecuadamente en entornos desconocidos mediante una combinación de percepción continua y reglas de navegación basadas en sectores.
+Aunque en momentos cuando el robot se acerca demasiado a la pared el laser genera lecturas ruidosas que producen falsas zonas accesibles detrás de paredes.
 
 ---
 
-## 7. Funcionamiento en vídeo
+## 6. Funcionamiento en vídeo
 
 En este vídeo se puede observar el comportamiento del robot: avance en zonas despejadas, giros ante obstáculos, y la construcción progresiva del mapa mostrado en la interfaz.
 
