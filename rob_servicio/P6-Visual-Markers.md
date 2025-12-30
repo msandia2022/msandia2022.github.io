@@ -1,4 +1,4 @@
-# P2 - Localización Visual mediante AprilTags
+# P6 - Localización Visual mediante AprilTags
 
 ## Introducción
 
