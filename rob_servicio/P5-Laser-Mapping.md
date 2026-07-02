@@ -13,7 +13,7 @@ El funcionamiento del robot se apoya en dos módulos principales:
 ## 1. Sistema de navegación reactiva
 
 El robot realiza su navegación dividiendo la lectura del láser en tres sectores clave: frontal, lateral izquierdo y lateral derecho. A partir del valor mínimo en cada sector, decide la acción más segura.  
-Cuando el espacio frontal está libre, avanza en línea recta. Si detecta un obstáculo por delante, gira hacia el lado con mayor distancia disponible. Cuando un objeto aparece cerca de la izquierda o la derecha, ejecuta una evasión lateral para evitar colisiones.
+Cuando el espacio frontal está libre, avanza en línea recta. Si detecta un obstáculo por delante, gira hacia el lado con mayor distancia disponible. Cuando detecta obstáculos en alguno de los laterales mientras el frente está bloqueado, modifica la velocidad angular para girar hacia la zona con mayor espacio libre.
 
 Este enfoque reactivo evita la necesidad de planificadores avanzados y resulta especialmente eficaz en entornos estrechos o cambiantes, ya que las decisiones se toman de forma inmediata en función de la percepción directa del sensor.
 
@@ -46,13 +46,17 @@ La interfaz WebGUI muestra frame a frame esta evolución, lo que permite observa
 ## 4. Resultados y conclusiones
 
 El robot fue capaz de desplazarse de forma autónoma evitando obstáculos y generando un mapa en tiempo real.
-Cabe destacar que debido a la naturaleza puramente reactiva y aleatoria del algoritmo implementado no garantiza una cobertura óptima ni completa de la nave lo que dificulta la elaboración del mapa.
+Cabe destacar que debido a la naturaleza puramente reactiva y aleatoria del algoritmo implementado no garantiza una cobertura óptima ni completa de la nave lo que impide garantizar una cobertura completa del entorno y, por tanto, la obtención de un mapa totalmente reconstruido.
+
+En conjunto, el sistema demuestra que es posible realizar navegación autónoma y construcción de mapas utilizando únicamente información procedente del sensor láser y odometría. Aunque la estrategia de navegación no maximiza la exploración del entorno, resulta suficientemente robusta para generar mapas coherentes en los distintos escenarios de prueba.
 
 ---
 
 ## 5. Funcionamiento
 
 ### Galería de mapas obtenidos
+
+A continuación se muestran algunos de los mapas obtenidos utilizando los diferentes niveles de ruido proporcionados por el simulador.
 
 | Nivel de Odometría | Visualización del Mapa Generado |
 | :--- | :--- |
