@@ -56,22 +56,22 @@ Cabe destacar que debido a la naturaleza puramente reactiva y aleatoria del algo
 
 | Nivel de Odometría | Visualización del Mapa Generado |
 | :--- | :--- |
-| **Odometría Perfecta**<br>_HAL.getPose3d_ | ![Mapa con Odometría Perfecta](recursos/.png) |
-| **Ruido Bajo**<br>_Low Noise_ | ![Mapa con Ruido Bajo](recursos/.png) |
-| **Ruido Medio**<br>_Medium Noise_ | ![Mapa con Ruido Medio](recursos/.png) |
-| **Ruido Alto**<br>_High Noise_ | ![Mapa con Ruido Alto](recursos/.png) |
+| **Odometría Perfecta**<br>_HAL.getPose3d_ | ![Mapa con Odometría Perfecta](recursos/halgetpose.png) |
+| **Ruido Bajo**<br>_Low Noise_ | ![Mapa con Ruido Bajo](recursos/lownoise_buena.png) |
+| **Ruido Medio**<br>_Medium Noise_ | ![Mapa con Ruido Medio](recursos/mediumnoise.png) |
+| **Ruido Alto**<br>_High Noise_ | ![Mapa con Ruido Alto](recursos/highnoise.png) |
 
 ### Escenario A: Simulación con Odometría Perfecta
 
 <video width="600" controls>
-  <source src="recursos/laser-mapping.mp4" type="video/mp4">
+  <source src="recursos/halgetposevid.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
 ### Escenario B: Simulación con Ruido Bajo
 
 <video width="600" controls>
-  <source src="recursos/laser-mapping.mp4" type="video/mp4">
+  <source src="recursos/lownoisevid.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
