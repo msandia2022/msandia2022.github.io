@@ -71,7 +71,7 @@ Cabe destacar que debido a la naturaleza puramente reactiva y aleatoria del algo
 ### Escenario B: Simulación con Ruido Bajo
 
 <video width="600" controls>
-  <source src="recursos/lownoisevid.webm" type="video/webm">
+  <source src="recursos/smallnoise-git.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
