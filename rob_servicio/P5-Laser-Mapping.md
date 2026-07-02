@@ -64,7 +64,7 @@ Cabe destacar que debido a la naturaleza puramente reactiva y aleatoria del algo
 ### Escenario A: Simulación con Odometría Perfecta
 
 <video width="600" controls>
-  <source src="recursos/halgetposevid.webm" type="video/webm">
+  <source src="recursos/halgetpose-git.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
