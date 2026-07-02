@@ -1,16 +1,12 @@
 # P5 – Laser Mapping
 
-![Laser Mapping](recursos/laser_mapping.png)
-
 ## Introducción
 
-En este proyecto he desarrollado un sistema de **navegación autónoma basado únicamente en sensores láser**, capaz de desplazarse por un entorno desconocido mientras construye en tiempo real un mapa de ocupación. El robot utiliza un comportamiento reactivo para evitar obstáculos y, al mismo tiempo, genera un mapa bidimensional marcando zonas libres y obstáculos detectados mediante el láser. El sistema combina una navegación sencilla pero robusta con un proceso continuo de actualización del mapa, lo que permite que el robot avance por el entorno sin necesidad de planificación global.
+En este proyecto he desarrollado un sistema de navegación autónoma basado únicamente en sensores láser, capaz de desplazarse por un entorno desconocido mientras construye en tiempo real un mapa de ocupación probabilístico. El robot utiliza un comportamiento reactivo para evitar obstáculos y, al mismo tiempo, genera un mapa bidimensional marcando zonas libres y obstáculos detectados mediante el procesamiento de rayos láser en formato Log-Odds. El sistema combina una navegación sencilla pero robusta con un proceso continuo de actualización del mapa, lo que permite que el robot avance por el entorno de manera eficiente sin necesidad de planificación global.
 
 El funcionamiento del robot se apoya en dos módulos principales:  
-- Un **mapeador láser**, que interpreta cada rayo, proyecta su trayectoria sobre el mapa e identifica tanto espacios transitables como puntos de impacto.  
-- Un **controlador reactivo**, que analiza sectores del láser y decide cómo avanzar, detenerse o girar según la proximidad de los obstáculos.
-
-Gracias a esta combinación, el robot mantiene un desplazamiento estable y es capaz de construir una representación coherente del entorno en tiempo real.
+- Un **mapeador láser**, que interpreta cada rayo, proyecta su trayectoria sobre el mapa mediante un tamaño de paso optimizado e identifica tanto espacios transitables como puntos de impacto acumulando evidencia matemática.
+- Un **controlador reactivo**, que analiza sectores clave del láser y decide cómo avanzar, detenerse o girar según la proximidad de los obstáculos.
 
 ---
 
@@ -23,46 +19,56 @@ Este enfoque reactivo evita la necesidad de planificadores avanzados y resulta e
 
 ---
 
-## 2. Construcción del mapa mediante láser
+## 2. Construcción del mapa mediante Log-Odds
 
-El sistema mantiene un mapa en escala de grises donde representa el entorno, actualizándolo en cada ciclo. Para cada rayo del láser se calcula el ángulo real según la orientación del robot y se recorre la trayectoria del haz hasta su distancia detectada o hasta un máximo permitido.
+Para lograr un mapa denso y resistente al ruido, el sistema incorpora el modelo probabilístico sensorial y la combinación de evidencias siguiendo la regla de Bayes. En lugar de utilizar valores binarios fijos o realizar costosas multiplicaciones de probabilidades condicionales tradicionales, la actualización se realiza de forma elegante mediante una representación en Log-Odds. Esta formulación matemática simplifica la regla de Bayes convirtiendo los productos probabilísticos en sumas y restas algebraicas directas sobre la rejilla.
 
-Durante este proceso aparecen dos zonas diferenciadas:
+Cada rayo del láser se transforma según la orientación del robot y se recorre su trayectoria. El mapa comienza en un gris neutro absoluto (0.0 en Log-Odds, que equivale a una probabilidad inicial de ocupación del 50% o zona desconocida) y combina las nuevas evidencias de forma incremental en cada ciclo:
 
-- **Zona libre**: se aclara progresivamente cada celda por la que pasa el rayo antes de impactar o llegar al rango máximo. Esto refuerza visualmente aquellas áreas confirmadas como transitables.  
-- **Punto de impacto**: cuando el láser detecta un obstáculo válido, la celda correspondiente se oscurece. Esto permite que el mapa resalte claramente paredes u objetos.
+- **Zona libre (Evidencia Bayesiana Negativa)**: se resta el valor `L_PROB_FREE = -0.3` a cada celda por la que transita el haz, aclarando progresivamente el suelo al disminuir su probabilidad de estar ocupada.
+- **Punto de impacto (Evidencia Bayesiana Positiva)**: cuando el láser detecta un obstáculo válido, se suma `L_PROB_OCC = 2.5` a la celda final, aumentando drásticamente la confianza de ocupación y oscureciéndola con fuerza.
 
-La combinación de aclarado incremental y oscurecimiento genera un mapa denso, coherente y resistente a ruido, ofreciendo al usuario una representación clara del entorno que el robot va descubriendo.
-
----
-
-## 3. Proyección del láser en el mapa
-
-Cada lectura del sensor se transforma desde coordenadas reales del robot hasta coordenadas de mapa usando la función proporcionada por el entorno de simulación. El sistema se asegura de que cada punto marcado esté dentro de los límites del mapa, evitando errores y garantizando que todas las actualizaciones son válidas.
-
-Este mecanismo permite una representación acumulativa: cuanto más se mueve el robot, más completa y contrastada se vuelve la imagen del entorno.
+Para evitar la sobreconfianza y la inercia excesiva, se aplica un mecanismo de saturación restrictiva (`L_MIN_SATURATE = -5.0` y `L_MAX_SATURATE = 5.0`). Además, para garantizar la independencia de las medidas, el mapa solo se actualiza si el robot ha realizado un movimiento mínimo respecto a su última posición válida.
 
 ---
 
-## 4. Actualización continua y visualización
+## 3. Binarización y visualización en tiempo real
 
-El mapa comienza completamente gris, representando un entorno desconocido. A medida que el robot avanza, el sistema refresca la visualización frame a frame, permitiendo observar cómo se revelan zonas libres y cómo aparecen los obstáculos detectados.
+Al final de cada ciclo, la matriz matemática de Log-Odds se mapea a una imagen visual en escala de grises (**0**-**255**). Se han establecido umbrales estrictos de certeza para evitar fluctuaciones:
 
-La interfaz WebGUI muestra en tiempo real la evolución del mapeo, lo que facilita la interpretación del movimiento del robot y el progreso del escaneo láser.
+- Si **Log-Odds > 0.8** se binariza a Negro (0), generando muros gruesos y definidos.
+- Si **Log-Odds < -0.8** se binariza a Blanco (255), asegurando un pasillo limpio.
 
----
-
-## 5. Resultados y conclusiones
-
-El robot fue capaz de desplazarse de forma autónoma evitando obstáculos y generando un mapa en tiempo real de alta claridad. El sistema reactivo permitió que el robot navegara de manera simple pero eficaz, mientras que el mapeado con láser produjo una representación detallada del entorno con zonas libres bien definidas y obstáculos marcados de forma nítida.
-
-Aunque en momentos cuando el robot se acerca demasiado a la pared el laser genera lecturas ruidosas que producen falsas zonas accesibles detrás de paredes.
+La interfaz WebGUI muestra frame a frame esta evolución, lo que permite observar visualmente cómo se descubren los pasillos.
 
 ---
 
-## 6. Funcionamiento en vídeo
+## 4. Resultados y conclusiones
 
-En este vídeo se puede observar el comportamiento del robot: avance en zonas despejadas, giros ante obstáculos, y la construcción progresiva del mapa mostrado en la interfaz.
+El robot fue capaz de desplazarse de forma autónoma evitando obstáculos y generando un mapa en tiempo real.
+Cabe destacar que debido a la naturaleza puramente reactiva y aleatoria del algoritmo implementado no garantiza una cobertura óptima ni completa de la nave lo que dificulta la elaboración del mapa.
+
+---
+
+## 5. Funcionamiento
+
+### Galería de mapas obtenidos
+
+| Nivel de Odometría | Visualización del Mapa Generado |
+| :--- | :--- |
+| **Odometría Perfecta**<br>_HAL.getPose3d_ | ![Mapa con Odometría Perfecta](recursos/.png) |
+| **Ruido Bajo**<br>_Low Noise_ | ![Mapa con Ruido Bajo](recursos/.png) |
+| **Ruido Medio**<br>_Medium Noise_ | ![Mapa con Ruido Medio](recursos/.png) |
+| **Ruido Alto**<br>_High Noise_ | ![Mapa con Ruido Alto](recursos/.png) |
+
+### Escenario A: Simulación con Odometría Perfecta
+
+<video width="600" controls>
+  <source src="recursos/laser-mapping.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+### Escenario B: Simulación con Ruido Bajo
 
 <video width="600" controls>
   <source src="recursos/laser-mapping.mp4" type="video/mp4">
