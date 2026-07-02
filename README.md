@@ -10,7 +10,7 @@ Welcome to my blog! My name is Miriam Sandía, I'm a Robotics Software Engineeri
 
 [Práctica 4 - Robot de Almacén](rob_servicio/P4-Robot-Almacen.md)
 
-[Práctica 5 - Laser Mapping](rob_servicio/P5-Laser-Mapping.md)
+[Práctica 5 2a Convocatoria - Laser Mapping](rob_servicio/P5-Laser-Mapping.md)
 
 [Práctica 6 - Visual Markers](rob_servicio/P6-Visual-Markers.md)
 
