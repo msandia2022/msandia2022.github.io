@@ -1,7 +1,7 @@
 # Miriam's Blog
 Welcome to my blog! My name is Miriam Sandía, I'm a Robotics Software Engineering student at URJC. Here, I'll be posting my projects.
 
-## Robótica Móvil
+## Robótica Móvil 26/27
 [Project 1 - Vacuum Cleaner](P1-Vaccum-Cleaner.md)
 
 [Project 2 - Follow Line](P2-Follow-Line.md)
@@ -12,7 +12,7 @@ Welcome to my blog! My name is Miriam Sandía, I'm a Robotics Software Engineeri
 
 [Project 5 - Monte Carlo Laser Localization](P5-Monte-Carlo-Laser-Localization.md)
 
-## Robótica de Servicio
+## Robótica de Servicio 25/26
 [Práctica 1 - Localized Vacuum Cleaner](rob_servicio/P1-Localized-Vacuum-Cleaner.md)
 
 [Práctica 2 - Rescue People](rob_servicio/P2-Rescue-People.md)
