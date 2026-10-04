@@ -1,24 +1,18 @@
 # P1 - Vacuum Cleaner
-In this practice, I have implemented a simple algorithm for the navigation of the robot vacuum cleaner using the bumper and the laser sensors.
+In this practice, I have implemented a simple algorithm for the navigation of a robot vacuum cleaner using the laser sensors.
 
 ## Finite-State Machine
 To start developing the algorithm, I defined a list of states and the inputs that trigger the transitions between each state.
 
-Initially, the robot starts in the `FORWARD` state until the bumper detects a collision.
+1. **`SPIRAL`**: Initially, the robot starts in this state, performing an expanding spiral pattern by keeping a constant angular velocity while gradually increasing its linear velocity with a step factor. Once the linear velocity reaches its max, it transitions to `FORWARD` to explore new open areas. If an obstacle is detected within a threshold, it transitions to `BACKWARD`.
 
-Then, it transitions to the `BACKWARD` state to separate from the wall and avoid any scratches.
-When the bumper no longer detects a collision, the robot changes to the `TURN` state.
+2. **`BACKWARD`**: The robot reverses to safely clear obstacles and avoid getting stuck against walls. Once the path is clear, it transitions to `TURNING`.
 
-In the `TURN` state, the robot rotates until it achieves a random angle.
+3.  **`TURNING`**: The robot rotates on its axis for a non-blocking random duration. This time-based approach introduces the necessary randomness to navigate out of corridors and corners. Upon completion, it transitions to `FORWARD`.
 
-Finally, the robot resumes its cleaning in the `FORWARD` state.
+4. **`FORWARD`**: The robot drives straight for a random duration. This long-straight motion allows the robot to travel across room doorways and reach distant areas before initiating a new `SPIRAL`. If an obstacle is detected mid-transit, it immediately switches back to `BACKWARD`.
 
-![FSM Image](recursos/FSM.jpg)
-
-## Implementation
-To implement the algorithm, I defined two functions that process laser sensor data: one converts laser distance readings from degrees to radians, and the other calculates the actual angle. Additionally, a third function randomizes an angle.
-
-Adding randomization enhances the algorithm's robustness, as this unpredictability allows the robot to cover more area effectively.
+![FSM Image](rob_mov/FSM.jpg)
 
 
 ## Robot cleaning for 10 minutes
