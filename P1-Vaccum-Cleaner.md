@@ -23,7 +23,7 @@ Adding randomization enhances the algorithm's robustness, as this unpredictabili
 
 ## Robot cleaning for 10 minutes
 <video width="600" controls>
-  <source src="recursos/video-P1.mp4" type="video/mp4">
+  <source src="rob_mov/vacuum_cleaner.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
