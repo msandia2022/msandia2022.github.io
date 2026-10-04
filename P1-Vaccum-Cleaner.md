@@ -12,7 +12,7 @@ To start developing the algorithm, I defined a list of states and the inputs tha
 
 4. **`FORWARD`**: The robot drives straight for a random duration. This long-straight motion allows the robot to travel across room doorways and reach distant areas before initiating a new `SPIRAL`. If an obstacle is detected mid-transit, it immediately switches back to `BACKWARD`.
 
-![FSM Image](rob_mov/FSM.jpg)
+![FSM Image](rob_mov/FSM.png)
 
 
 ## Robot cleaning for 10 minutes
