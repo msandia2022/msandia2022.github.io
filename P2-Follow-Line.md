@@ -41,7 +41,7 @@ The PID controller adjusts the car's motion to minimize the error between the de
 The car successfully follows the red line in a simple circuit, navigating forward, left, and right turns effectively. The improved HSV filter ensures robust line detection, and the PID controller enhances stability and responsiveness. The circuit is completed in 94 seconds.
 
 <video width="600" controls>
-  <source src="recursos/def_circ_simple.webm" type="video/webm">
+  <source src="def_circ_simple.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
