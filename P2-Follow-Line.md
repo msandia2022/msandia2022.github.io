@@ -1,60 +1,53 @@
 # P2 - Follow Line
-In this practice, I implemented an algorithm for a self-driving car to follow a red line within a simple circuit. The algorithm processes camera input, detects the line, and adjusts the car's motion using a PID controller.
-
-## Improvements
-### HSV Filter:
-The line detection was enhanced with a more robust HSV filter. The car can now accurately differentiate the red line from other colors, such as white, ensuring reliable navigation on any circuit.
-
-### PID Controller:
-I upgraded the controller by introducing derivative (D) and integral (I) components to improve stability and accuracy. This refinement reduces oscillations and improves line-following precision.
+In this practice, I implemented an algorithm for a self-driving car to follow a red line across different circuits. The algorithm processes camera input, detects the line, and adjusts the linear and angular velocities using dual PID controllers.
 
 ## Implementation
-The algorithm uses the car's camera feed to detect and follow the red line. Below are the main steps:
+### 1. Color Segmentation Strategy (HS Filtering)
+To make the vision robust against changing lighting conditions, shadows, and track reflections, I transitioned from a basic RGB thresholding to a specialized **Hue-Saturation (HS) filter**. 
+- **Hue Isolation:** Red wraps around both ends of the color spectrum, so two distinct hue sub-ranges were merged to capture all shade variations accurately.
+- **Ignoring Brightness (Value):** The Value (V) channel limits were set to cover the full spectrum. By relying solely on Hue and Saturation, the car remains unaffected by shadows or bright highlights on the track.
 
-### Image Processing:
-The image is converted to HSV color space to isolate red hues using a binary mask.
+### 2. Centroid Tracking via Image Moments
+Instead of sampling static reference pixels across fixed lines, I implemented a dynamic **Region of Interest (ROI)** combined with **Image Moments**.
+- The algorithm focuses on a target horizontal band ahead of the car to compute the geometric center (centroid) of the detected line mass.
+- This provides a smooth, continuous positional metric relative to the frame center.
+- **Fail-safe Logic:** If the line is temporarily obscured or lost during extreme turns, the system retains the previous valid positional feedback to prevent sudden erratic steering.
 
-A debug image is created to visualize the detected line.
+### 3. Dual PID Controller Architecture
+Rather than relying on fixed forward speeds or simple proportional steering, I built two complementary closed-loop controllers:
 
-### Reference Pixels:
-Specific reference points (center, left, and right) are extracted from the image to determine the car's position relative to the line.
+- **Steering Control (Angular Velocity):** 
+  - **Proportional:** Corrects immediate lateral displacement from the line center.
+  - **Integral:** Compensates for systematic drift, with anti-windup bounds to prevent overshoot.
+  - **Derivative:** Dampens rapid oscillations when crossing or re-entering the line alignment.
+  
+- **Adaptive Speed Control (Linear Velocity):**
+  - Evaluates the magnitude of the positioning error in real time.
+  - Automatically modulates speed: maximum velocity on straightaways, smoothly slowing down when entering tight corners or sharp bends.
 
-### Position Error Calculation:
-The algorithm computes the error between the expected and actual line position in the image.
 
-### Control Signals:
-A PID controller calculates the linear and angular velocities based on the position error, ensuring smooth and responsive adjustments.
+## Circuit Performance & Evaluation
+The car successfully follows the red line in every circuit, navigating forward, left, and right turns effectively. The improved HS filter ensures robust line detection, and the dual PID controllers enhance stability and responsiveness. The simple circuit is completed in 48 seconds.
 
-### Motion Commands:
-The car moves forward, turns left, or turns right depending on the detected line position.
-
-##  PID controller
-The PID controller adjusts the car's motion to minimize the error between the desired path (center of the image) and the actual path:
-
-- Proportional (P): Reacts to the current error.
-
-- Derivative (D): Reduces oscillations by considering the rate of change of the error.
-
-- Integral (I): Addresses accumulated errors over time.
-
-## Car in simple circuit
-The car successfully follows the red line in a simple circuit, navigating forward, left, and right turns effectively. The improved HSV filter ensures robust line detection, and the PID controller enhances stability and responsiveness. The circuit is completed in 94 seconds.
-
+### Simple Circuit
 <video width="600" controls>
   <source src="rob_mov/def_circ_simple.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
+### Montmeló Circuit
 <video width="600" controls>
   <source src="rob_mov/def_circ_montmelo.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
+### Montreal Circuit
 <video width="600" controls>
   <source src="rob_mov/def_circ_montreal.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
+### Nürburgring Circuit
 <video width="600" controls>
   <source src="rob_mov/def_circ_nurburgring.webm" type="video/webm">
   Your browser does not support the video tag.
