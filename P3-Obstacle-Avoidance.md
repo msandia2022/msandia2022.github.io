@@ -17,7 +17,7 @@ The total force is the sum of the attractive and repulsive forces. The robot adj
 
 ## Demonstration
 <video width="600" controls>
-  <source src="recursos/video-P3.mp4" type="video/mp4">
+  <source src="rob_mov/obstacle_avoidance.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
