@@ -23,7 +23,7 @@ The robot adjusts its velocity based on the direction of this resultant force:
 ## Demonstration
 The video is played in x2 speed.
 <video width="600" controls>
-  <source src="rob_mov/obstacle_avoidance_2.mp4" type="video/mp4">
+  <source src="rob_mov/obstacle_avoidance.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
