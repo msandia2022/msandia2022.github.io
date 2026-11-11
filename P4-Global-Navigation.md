@@ -5,24 +5,24 @@ In this practice, I implemented an algorithm for a self-driving car to navigate 
 
 ## Implementation
 ### Cost map
-The **cost map** represents the propagation of costs starting from the destination. The cost at each cell is calculated based on the distance from the destination. It is initialized with infinite values and updated iteratively to propagate costs.
+The **cost map** represents the propagation of costs starting from the destination. The cost at each cell is calculated based on the distance from the destination. It is initialized with infinite values and updated iteratively to propagate costs across the grid.
 
 ![Map Image](recursos/cost-map.png)
 
 ### Obstacle map
-The **obstacle map** accounts for obstacles and applies penalties to nearby cells, creating a buffer zone around them. Obstacles are marked as zero, and a radius of penalized cells is defined to prevent the car from navigating too close to them.
+The **obstacle map** accounts for obstacles and applies a safety margin (inflation) around them to create a buffer zone. Obstacles and penalized cells are marked with zero values to prevent the car from driving too close to walls.
 
 ![Map Image](recursos/obstacle-map.png)
 
 ### Navigation with Gradient Path Planning (GPP)
 The navigation process includes three key steps:
-1. **Cost Propagation**: The destination cell is assigned a cost of 1 to distinguish it clearly from obstacles, and costs propagate outward using a breadth-first search (BFS) approach.
-2. **Obstacle Penalty**: Obstacles and nearby cells are penalized to prevent collisions.
-3. **Gradient Navigation**: The car moves towards cells with the lowest gradient values, recalculating dynamically.
+1. **Cost Propagation**: The destination cell is assigned a cost of 0, and costs propagate outward across the grid using **Dijkstra's algorithm** (via a `PriorityQueue`), correctly weighting orthogonal (1.0) and diagonal (1.414) movements.
+2. **Obstacle Penalty**: Obstacles are inflated to preserve a safe turning radius and prevent collisions in tight corridors.
+3. **Gradient Navigation**: The car evaluates local lookahead cells to move toward the neighbor with the lowest cost value, dynamically calculating linear and angular velocity commands via a proportional controller.
 
 ## Demonstration
 <video width="600" controls>
-  <source src="recursos/video-P4.mp4" type="video/mp4">
+  <source src="rob_mov/video-P4.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
