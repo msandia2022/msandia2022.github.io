@@ -10,9 +10,11 @@ Welcome to my blog! My name is Miriam Sandía, I'm a Robotics Software Engineeri
 
 [Project 4 - Global Navigation using TeleTaxi](P4-Global-Navigation.md)
 
-[Project 5 - Localized Vacuum Cleaner](rob_servicio/P1-Localized-Vacuum-Cleaner.md)
+[Project 5 - Laser Mapping](rob_servicio/P5-Laser-Mapping.md)
 
-[Project 6 - Monte Carlo Laser Localization](P5-Monte-Carlo-Laser-Localization.md)
+[Project 6 - Localized Vacuum Cleaner](rob_servicio/P1-Localized-Vacuum-Cleaner.md)
+
+[Project 7 - Monte Carlo Laser Localization](P5-Monte-Carlo-Laser-Localization.md)
 
 ## Robótica de Servicio 25/26
 [Práctica 1 - Localized Vacuum Cleaner](rob_servicio/P1-Localized-Vacuum-Cleaner.md)
