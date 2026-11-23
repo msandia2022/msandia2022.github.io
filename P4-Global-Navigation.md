@@ -27,7 +27,7 @@ The navigation process includes three key steps:
    * **Observed limitations:** Two major issues appeared during navigation tests. First, restricting expansion to 4 directions produced unnatural trajectories. Second, evaluating only a 1-cell neighborhood caused severe **zigzagging** along straight avenues.
 
 2. **Map Representation Upgrade: 8-Connected Costs and Obstacle Inflation**
-   * **Euclidean-like propagation:** I expanded the Wavefront search to 8 directions (`DIRECTIONS`), assigning a step cost of `1.0` for cardinal moves and `1.414` ($\sqrt{2}$) for diagonals inside `expand_wavefront`. This produced much smoother, diagonal-aware cost gradients across open intersections.
+   * **Euclidean-like propagation:** I expanded the Wavefront search to 8 directions (`DIRECTIONS`), assigning a step cost of `1.0` for cardinal moves and `1.414` for diagonals inside `expand_wavefront`. This produced much smoother, diagonal-aware cost gradients across open intersections.
    * **Safety margin (`apply_penalty`):** To keep the vehicle away from walls and sharp corners, I introduced a separate `obstacle_map` with an inflation radius of 3 cells (`penalty_radius = 3`) around every detected wall pixel (`city_map == 0`). By ignoring inflated cells (`obstacle_map == 0`) during local gradient selection, the taxi naturally maintained a safe clearance from sidewalks and buildings.
 
 3. **Trajectory Smoothing and Event-Driven Replanning**
