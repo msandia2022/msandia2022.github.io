@@ -25,8 +25,22 @@ Rather than relying on fixed forward speeds or simple proportional steering, I b
   - Evaluates the magnitude of the positioning error in real time.
   - Automatically modulates speed: maximum velocity on straightaways, smoothly slowing down when entering tight corners or sharp bends.
 
+### 4. Iterative Development and Progress
 
-## Circuit Performance & Evaluation
+Before reaching the final line-following architecture:
+
+1. **Initial Approach: 3-Pixel Sampling and HSV Filtering**
+   * **Initial design:** To detect the red line quickly, I initially applied a color filter in the full **HSV** color space (filtering H, S, and V channels) and evaluated only **3 specific pixels** at different heights in the image to estimate the track center and compute the lateral error relative to the camera center.
+   * **Observed limitations:** This approach proved very fragile on the track. By relying on 3 fixed coordinates, as soon as the car entered a sharp turn, the line shifted outside those sampling points and the vehicle completely lost its reference. Additionally, including the **V (Value)** channel caused track shadows and lighting variations to distort the binary mask, breaking line detection.
+
+2. **Perception Upgrade: Switching to HS Space and Image Moments**
+   * **Color space adjustment (HSV to HS):** I removed the strict constraint on brightness (V channel) to focus solely on Hue and Saturation (**HS**), achieving a much more stable segmentation against track shadows and surface glare.
+   * **From 3 pixels to global centroid:** I replaced point sampling with **image moments** (`cv2.moments`) computed over the entire segmented Region of Interest (ROI). This calculates the centroid by averaging the entire visible red pixel mass, eliminating point noise and preserving the reference even when the line shifts toward the edges of the frame during tight turns.
+
+3. **Control Stabilization: Dual PID Tuning**
+   * With a continuous, jitter-free visual reference, I was able to tune the **two PID controllers** (angular velocity and linear velocity), adjusting their gains to eliminate oscillations on straightaways and automatically reduce speed when approaching high-error curves.
+
+## 5. Circuit Performance & Evaluation
 The car successfully follows the red line in every circuit, navigating forward, left, and right turns effectively. The improved HS filter ensures robust line detection, and the dual PID controllers enhance stability and responsiveness. The simple circuit is completed in 48 seconds.
 
 ### Simple Circuit
